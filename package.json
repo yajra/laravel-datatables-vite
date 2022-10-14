@@ -1,0 +1,37 @@
+{
+  "name": "laravel-datatables-vite",
+  "version": "0.1.0",
+  "description": "Laravel DataTables with jQuery, Bootstrap and Vite",
+  "main": "js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yajra/laravel-datatables-vite.git"
+  },
+  "keywords": [
+    "yajra",
+    "laravel",
+    "dataTables",
+    "vitejs",
+    "bootstrap",
+    "jquery"
+  ],
+  "author": {
+    "name": "Arjay Angeles",
+    "url": "https://yajrabox.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yajra/laravel-datatables-vite/issues"
+  },
+  "homepage": "https://github.com/yajra/laravel-datatables-vite#readme",
+  "devDependencies": {
+    "datatables.net": "^1.12.1",
+    "datatables.net-bs5": "^1.12.1",
+    "datatables.net-buttons-bs5": "^2.2.3",
+    "datatables.net-select-bs5": "^1.4.0",
+    "jquery": "^3.6.1"
+  }
+}
