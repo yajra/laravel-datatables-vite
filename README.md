@@ -1,8 +1,6 @@
-# Laravel DataTables with Vite
+# Laravel, DataTables, Bootstrap and Vite
 
-Get started with Laravel DataTables and Vite in a few minutes.
-
-> Note: The scripts relies on bootstrap styles.
+Get started with Laravel, DataTables, Bootstrap and Vite in a few minutes.
 
 ## Installation
 
