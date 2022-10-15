@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
     $.fn.dataTable.ext.buttons.reset = {
         name: 'reset',
         className: 'btn-primary',
-        text: '<i class="fa fa-undo" data-toggle="tooltip" data-title="Clear Search"></i>',
+        titleAttr: 'Reset',
+        text: '<i class="bi bi-arrow-counterclockwise"></i>',
         action: function (e, dt, button, config) {
             $('.dataTable').find(':input').each(function () {
                 $(this).val('');

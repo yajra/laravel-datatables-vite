@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
     $.fn.dataTable.ext.buttons.print = {
         name: 'print',
         className: 'buttons-print btn-primary',
-        text: '<i class="fa fa-print"></i>',
+        titleAttr: 'Print',
+        text: '<i class="bi bi-printer"></i>',
         action: function (e, dt, button, config) {
             window.location = _buildUrl(dt, 'print');
         }

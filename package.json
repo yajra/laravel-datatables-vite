@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/yajra/laravel-datatables-vite#readme",
   "devDependencies": {
+    "bootstrap-icons": "^1.9.1",
     "datatables.net": "^1.12.1",
     "datatables.net-bs5": "^1.12.1",
     "datatables.net-buttons-bs5": "^2.2.3",

@@ -21,6 +21,14 @@ $.extend(true, $.fn.dataTable.defaults, {
         "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
 });
 
+$.extend(true, $.fn.dataTable.Buttons.defaults, {
+    dom: {
+        buttonLiner: {
+            tag: ''
+        },
+    },
+});
+
 $.extend($.fn.dataTable.ext.classes, {
     sTable: "dataTable table table-striped table-bordered table-hover",
 });
