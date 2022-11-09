@@ -27,7 +27,7 @@
     "url": "https://github.com/yajra/laravel-datatables-vite/issues"
   },
   "homepage": "https://github.com/yajra/laravel-datatables-vite#readme",
-  "devDependencies": {
+  "dependencies": {
     "bootstrap-icons": "^1.9.1",
     "datatables.net": "^1.12.1",
     "datatables.net-bs5": "^1.12.1",
