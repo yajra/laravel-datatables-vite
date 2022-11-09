@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import 'bootstrap';
-import DataTable from 'datatables.net-bs5';
-import Buttons from 'datatables.net-buttons-bs5';
-import Select from 'datatables.net-select-bs5';
+import DataTable from 'datatables.net';
+import Buttons from 'datatables.net-buttons';
+import Select from 'datatables.net-select';
 import './dataTables.buttons.js';
 import './dataTables.renderers.js';
 
