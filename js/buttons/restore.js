@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         name: 'restore',
         extend: 'selected',
         className: 'buttons-restore btn-success',
-        text: '<i class="fa fa-undo"></i> Restore',
+        text: '<i class="bi bi-undo"></i> Restore',
         action: function (e, dt, node, config) {
             let editor = config.editor || dt.editor();
             editor.remove(dt.rows({selected: true}).indexes(), {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 buttons: [
                     {
-                        text: '<i class="fa fa-undo"></i> Restore',
+                        text: '<i class="bi bi-undo"></i> Restore',
                         className: 'btn btn-success btn-editor-restore',
                         action: function () {
                             this.submit(null, null, function (data) {

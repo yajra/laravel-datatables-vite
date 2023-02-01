@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         name: 'forceDelete',
         extend: 'selected',
         className: 'buttons-force-delete btn-danger',
-        text: '<i class="fa fa-trash"></i> Force Delete',
+        text: '<i class="bi bi-trash"></i> Force Delete',
         action: function (e, dt, node, config) {
             let editor = config.editor || dt.editor();
             editor.remove(dt.rows({selected: true}).indexes(), {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 buttons: [
                     {
-                        text: '<i class="fa fa-trash"></i> Delete',
+                        text: '<i class="bi bi-trash"></i> Delete',
                         className: 'btn btn-danger btn-editor-remove',
                         action: function () {
                             this.submit(null, null, function (data) {

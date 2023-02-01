@@ -6,7 +6,7 @@
  * Note: toggle function currently depends on 'fa-square'. Be sure to include it when overriding the text.
  *
  * Button::make('toggleScope')
- *     ->text('<i class="fa fa-square"></i> Only Deleted')
+ *     ->text('<i class="bi bi-square"></i> Only Deleted')
  *     ->scope('onlyDeleted')
  *
  * This will append the following data on ajax requests:
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $.fn.dataTable.ext.buttons.toggleScope = {
         name: 'toggleScope',
         className: 'buttons-toggle btn-secondary',
-        text: '<i class="fa fa-square"></i> Toggle',
+        text: '<i class="bi bi-square"></i> Toggle',
         action: function (e, dt, node, config) {
             node.find('i').toggleClass('fa-check-square').toggleClass('fa-square');
 

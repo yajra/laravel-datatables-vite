@@ -3,7 +3,7 @@
  *
  * -- Laravel Integration --
  *
- * Button::make('csv')->text('<i class="fa fa-file-csv"></i> Export to CSV')
+ * Button::make('csv')->text('<i class="bi bi-file-csv"></i> Export to CSV')
  *
  */
 document.addEventListener('DOMContentLoaded', function () {

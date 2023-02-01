@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         name: 'duplicate',
         extend: 'selected',
         className: 'buttons-duplicate btn-success',
-        text: '<i class="fa fa-copy"></i> Duplicate',
+        text: '<i class="bi bi-copy"></i> Duplicate',
         action: function (e, dt, node, config) {
             // Start in edit mode, and then change to create
             let editor = config.editor || dt.editor();
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 title: config.formTitle || 'Duplicate Record',
                 buttons: config.formButtons || [
                     {
-                        text: '<i class="fa fa-copy"></i> Duplicate',
+                        text: '<i class="bi bi-copy"></i> Duplicate',
                         className: 'btn btn-success btn-editor-duplicate',
                         action: function () {
                             this.submit();

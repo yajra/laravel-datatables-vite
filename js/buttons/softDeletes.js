@@ -5,7 +5,7 @@
  *
  * Note: toggle function currently depends on 'fa-square'. Be sure to include it when overriding the text.
  *
- * Button::make('withTrashed')->text('<i class="fa fa-square"></i> Show Deleted')
+ * Button::make('withTrashed')->text('<i class="bi bi-square"></i> Show Deleted')
  *
  * This will append the following data on ajax requests:
  *     draw: 1,
@@ -13,7 +13,7 @@
  *     scopes[withTrashed] = 0 / 1
  *
  * -- Using custom data key --
- * Button::make('withTrashed')->text('<i class="fa fa-square"></i> Show Deleted')->key('filters')
+ * Button::make('withTrashed')->text('<i class="bi bi-square"></i> Show Deleted')->key('filters')
  *
  * This will append the following data on ajax requests:
  *     draw: 1,
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $.fn.dataTable.ext.buttons.withTrashed = {
         name: 'withTrashed',
         className: 'buttons-toggle btn-secondary',
-        text: '<i class="fa fa-square"></i> Show Deleted',
+        text: '<i class="bi bi-square"></i> Show Deleted',
         action: function (e, dt, node, config) {
             node.find('i').toggleClass('fa-check-square').toggleClass('fa-square');
 
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
      *
      * Note: toggle function currently depends on 'fa-square'. Be sure to include it when overriding the text.
      *
-     * Button::make('onlyTrashed')->text('<i class="fa fa-square"></i> Only Deleted')
+     * Button::make('onlyTrashed')->text('<i class="bi bi-square"></i> Only Deleted')
      *
      * This will append the following data on ajax requests:
      *     draw: 1,
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
      *     scopes[onlyTrashed] = 0 / 1
      *
      * -- Using custom data key --
-     * Button::make('onlyTrashed')->text('<i class="fa fa-square"></i> Only Deleted')->key('filters')
+     * Button::make('onlyTrashed')->text('<i class="bi bi-square"></i> Only Deleted')->key('filters')
      *
      * This will append the following data on ajax requests:
      *     draw: 1,
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $.fn.dataTable.ext.buttons.onlyTrashed = {
         name: 'onlyTrashed',
         className: 'buttons-toggle btn-secondary',
-        text: '<i class="fa fa-square"></i> Only Deleted',
+        text: '<i class="bi bi-square"></i> Only Deleted',
         action: function (e, dt, node, config) {
             node.find('i').toggleClass('fa-check-square').toggleClass('fa-square');
 
