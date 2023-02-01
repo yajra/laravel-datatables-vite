@@ -5,7 +5,7 @@ version=0.5.0
 echo "Publishing version $version"
 
 git add .
-git commit -am "Bump $version :rocket:"
+git commit -am "chore: release $version :rocket:"
 npm version $version
 git push origin main && git push origin main --tags
 
