@@ -1,13 +1,16 @@
 import $ from 'jquery';
-import 'bootstrap';
+
+import * as Bootstrap from 'bootstrap'
+window.jQuery = window.$ = $
+window.bootstrap = Bootstrap;
+
 import DataTable from 'datatables.net-bs5';
+window.DataTable = DataTable;
+
 import 'datatables.net-buttons-bs5';
 import 'datatables.net-select-bs5';
 import './dataTables.buttons.js';
 import './dataTables.renderers.js';
-
-window.jQuery = window.$ = $
-window.DataTable = DataTable;
 
 $.extend(true, DataTable.defaults, {
     dom:
