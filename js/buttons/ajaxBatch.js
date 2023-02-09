@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $.fn.dataTable.ext.buttons.ajaxBatch = {
         name: 'ajaxBatch',
         extend: 'selected',
-        className: 'buttons-ajax btn-secondary',
+        className: 'buttons-ajax',
         text: 'Ajax Batch Action (Change Me)',
         action: function (e, dt, node, config) {
             let selected = dt.rows({selected: true}).data();

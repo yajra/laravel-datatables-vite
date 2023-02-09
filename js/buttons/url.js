@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $.fn.dataTable.ext.buttons.url = {
         name: 'url',
         extend: 'selectedSingle',
-        className: 'buttons-url btn-secondary',
+        className: 'buttons-url',
         text: 'URL Action (change me)',
         action: function (e, dt, node, config) {
             let data = dt.row({selected: true}).data();

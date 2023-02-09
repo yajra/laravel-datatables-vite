@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $.fn.dataTable.ext.buttons.ajax = {
         name: 'ajax',
         extend: 'selectedSingle',
-        className: 'buttons-ajax btn-secondary',
+        className: 'buttons-ajax',
         text: 'Ajax Action (Change Me)',
         action: function (e, dt, node, config) {
             let data = dt.row({selected: true}).data();

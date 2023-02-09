@@ -24,7 +24,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     $.fn.dataTable.ext.buttons.withTrashed = {
         name: 'withTrashed',
-        className: 'buttons-toggle btn-secondary',
+        className: 'buttons-toggle',
         text: '<i class="bi bi-square"></i> Show Deleted',
         action: function (e, dt, node, config) {
             node.find('i').toggleClass('fa-check-square').toggleClass('fa-square');
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     $.fn.dataTable.ext.buttons.onlyTrashed = {
         name: 'onlyTrashed',
-        className: 'buttons-toggle btn-secondary',
+        className: 'buttons-toggle',
         text: '<i class="bi bi-square"></i> Only Deleted',
         action: function (e, dt, node, config) {
             node.find('i').toggleClass('fa-check-square').toggleClass('fa-square');

@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     },
                     {
-                        text: 'Cancel', className: 'btn btn-secondary ml-2', action: function () {
+                        text: 'Cancel', className: 'btn ml-2', action: function () {
                             this.close();
                         }
                     }
