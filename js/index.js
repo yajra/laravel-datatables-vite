@@ -1,7 +1,7 @@
 import $ from 'jquery';
+window.jQuery = window.$ = $;
 
-import * as Bootstrap from 'bootstrap'
-window.jQuery = window.$ = $
+import * as Bootstrap from 'bootstrap';
 window.bootstrap = Bootstrap;
 
 import DataTable from 'datatables.net-bs5';
@@ -11,14 +11,6 @@ import 'datatables.net-buttons-bs5';
 import 'datatables.net-select-bs5';
 import './dataTables.buttons.js';
 import './dataTables.renderers.js';
-
-$.extend(true, DataTable.defaults, {
-    dom:
-        "<'row'<'col-sm-12 mb-4'B>>" +
-        "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
-        "<'row'<'col-sm-12'tr>>" +
-        "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
-});
 
 $.extend(true, DataTable.Buttons.defaults, {
     dom: {
