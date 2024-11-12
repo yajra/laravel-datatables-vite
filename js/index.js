@@ -22,8 +22,10 @@ $.extend(true, DataTable.defaults, {
 
 $.extend(true, DataTable.Buttons.defaults, {
     dom: {
-        buttonLiner: {
-            tag: ''
+        button: {
+            liner: {
+                tag: ""
+            }
         },
     },
 });
