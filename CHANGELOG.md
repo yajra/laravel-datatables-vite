@@ -1,5 +1,9 @@
 # Laravel DataTables Vite CHANGELOG
 
+## v0.6.0 - 2024-11-14
+
+- Upgrade to DataTables 2 #11
+
 ## v0.5.3 - 2024-11-14
 
 - Improve ajaxBatch button confirmation message #10
