@@ -6,7 +6,7 @@
  * Button::make('ajaxBatch')
  *     ->text('Restore')
  *     ->url(route('batch-restore-action-url'))
- *     ->confirmation('Generic confirmation message.') // Optional if you want confirmation before proceeding.
+ *     ->confirmation('Confirm restore _COUNT_ item_PLURAL_?') // Optional if you want confirmation before proceeding.
  *     ->onCancel('function(response) { alert('confirmation cancelled') }')
  *     ->onSuccess('function(response) { alert('success') }')
  *     ->onError('function(err) { alert('error') }')
@@ -19,22 +19,25 @@ document.addEventListener('DOMContentLoaded', function () {
         className: 'buttons-ajax',
         text: 'Ajax Batch Action (Change Me)',
         action: function (e, dt, node, config) {
-            let selected = dt.rows({selected: true}).data();
-            let formData = { data: [] };
-            for (i = 0; i < selected.count(); i++) {
+            const selected = dt.rows({selected: true}).data();
+            const formData = { data: [] };
+            for (let i = 0; i < selected.count(); i++) {
                 formData.data.push(selected[i]);
             }
 
             if (config.hasOwnProperty('confirmation')) {
-                if (! confirm(config.confirmation)) {
+                const confirmation = config.confirmation
+                    .replaceAll("_COUNT_", selected.length)
+                    .replaceAll("_PLURAL_", selected.length > 1 ? "s" : "");
+                if (! confirm(confirmation)) {
                     if (config.hasOwnProperty('onCancel')) config.onCancel();
 
                     return false;
                 }
             }
 
-            let url = config.url || '';
-            let method = config.method || 'POST';
+            const url = config.url || '';
+            const method = config.method || 'POST';
 
             $.ajax({
                 url: url,
