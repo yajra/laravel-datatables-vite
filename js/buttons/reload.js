@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         '  <span class="visually-hidden">Loading...</span>\n' +
                         '</i>');
                 } else {
-                    button.html('<i class="bi bi-arrow-repeat"></i>');
+                    button.html(config.text);
                 }
 
                 button.attr('disabled', processing);
