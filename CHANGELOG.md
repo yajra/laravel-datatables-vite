@@ -1,5 +1,9 @@
 # Laravel DataTables Vite CHANGELOG
 
+## v0.6.1 - 2024-12-13
+
+- Fix reload button text #12
+
 ## v0.6.0 - 2024-11-14
 
 - Upgrade to DataTables 2 #11
