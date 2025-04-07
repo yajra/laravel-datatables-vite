@@ -25,4 +25,4 @@ Add the following to your `resources/sass/app.scss` file:
 
 ## Quick Starter
 
-A [quick starter guide](https://yajrabox.com/docs/laravel-datatables/10.0/quick-starter) is available at the official package docs.
+A [quick starter guide](https://yajrabox.com/docs/laravel-datatables/quick-starter) is available at the official package docs.
