@@ -7,7 +7,7 @@
  *
  */
 document.addEventListener('DOMContentLoaded', function () {
-    $.fn.dataTable.ext.buttons.print = {
+    DataTable.ext.buttons.print = {
         name: 'print',
         className: 'buttons-print btn-primary',
         titleAttr: 'Print',

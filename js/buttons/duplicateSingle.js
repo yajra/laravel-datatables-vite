@@ -7,7 +7,7 @@
  *
  */
 document.addEventListener('DOMContentLoaded', function () {
-    $.fn.dataTable.ext.buttons.duplicateSingle = {
+    DataTable.ext.buttons.duplicateSingle = {
         name: 'duplicateSingle',
         extend: 'selectedSingle',
         className: 'buttons-duplicate btn-success',

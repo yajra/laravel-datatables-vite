@@ -7,7 +7,7 @@
  *
  */
 document.addEventListener('DOMContentLoaded', function () {
-    $.fn.dataTable.ext.buttons.export = {
+    DataTable.ext.buttons.export = {
         name: 'export',
         extend: 'collection',
         className: 'btn-primary',

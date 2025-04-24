@@ -7,7 +7,7 @@
  *
  */
 document.addEventListener('DOMContentLoaded', function () {
-    $.fn.dataTable.ext.buttons.pdf = {
+    DataTable.ext.buttons.pdf = {
         name: 'pdf',
         className: 'buttons-pdf btn-primary',
         titleAttr: 'Export as PDF',

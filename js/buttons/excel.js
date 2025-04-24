@@ -7,7 +7,7 @@
  *
  */
 document.addEventListener('DOMContentLoaded', function () {
-    $.fn.dataTable.ext.buttons.excel = {
+    DataTable.ext.buttons.excel = {
         name: 'excel',
         className: 'buttons-excel btn-primary',
         titleAttr: 'Export as Excel',

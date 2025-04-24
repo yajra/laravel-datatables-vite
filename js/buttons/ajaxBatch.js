@@ -13,7 +13,7 @@
  *
  */
 document.addEventListener('DOMContentLoaded', function () {
-    $.fn.dataTable.ext.buttons.ajaxBatch = {
+    DataTable.ext.buttons.ajaxBatch = {
         name: 'ajaxBatch',
         extend: 'selected',
         className: 'buttons-ajax',

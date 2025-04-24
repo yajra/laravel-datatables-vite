@@ -7,7 +7,7 @@
  *
  */
 document.addEventListener('DOMContentLoaded', function () {
-    $.fn.dataTable.ext.buttons.reset = {
+    DataTable.ext.buttons.reset = {
         name: 'reset',
         className: 'btn-primary',
         titleAttr: 'Reset',
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
             $('.dataTable').find(':input').each(function () {
                 $(this).val('');
             }).each(function (e) {
-                let val = $.fn.dataTable.util.escapeRegex($(this).val());
+                let val = DataTable.util.escapeRegex($(this).val());
                 dt.table().column($(this).closest('th').index()).search(val ? val : '', false, true);
             });
             dt.search('').draw();

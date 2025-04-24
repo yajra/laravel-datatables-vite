@@ -22,7 +22,7 @@
  *
  */
 document.addEventListener('DOMContentLoaded', function () {
-    $.fn.dataTable.ext.buttons.withTrashed = {
+    DataTable.ext.buttons.withTrashed = {
         name: 'withTrashed',
         className: 'buttons-toggle',
         text: '<i class="bi bi-square"></i> Show Deleted',
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
      *     filters[onlyTrashed] = 0 / 1
      *
      */
-    $.fn.dataTable.ext.buttons.onlyTrashed = {
+    DataTable.ext.buttons.onlyTrashed = {
         name: 'onlyTrashed',
         className: 'buttons-toggle',
         text: '<i class="bi bi-square"></i> Only Deleted',

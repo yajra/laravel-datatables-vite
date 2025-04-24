@@ -1,7 +1,7 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', function () {
-    $.fn.dataTable.render.badge = function (badgeType) {
+    DataTable.render.badge = function (badgeType) {
         return function (d, type, row) {
             if (!badgeType) {
                 badgeType = 'info';
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
     };
 
-    $.fn.dataTable.render.boolean = function () {
+    DataTable.render.boolean = function () {
         return function (d) {
             let mode = 'danger';
             let label = "N";
@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
 
-    $.fn.dataTable.render.suffix = function (suffix) {
+    DataTable.render.suffix = function (suffix) {
         return function (d) {
             return d + ' ' + suffix;
         };
     };
 
-    $.fn.dataTable.render.prefix = function (prefix) {
+    DataTable.render.prefix = function (prefix) {
         return function (d) {
             return prefix + ' ' + d;
         };
