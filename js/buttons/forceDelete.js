@@ -7,7 +7,7 @@
  *
  */
 document.addEventListener('DOMContentLoaded', function () {
-    $.fn.dataTable.ext.buttons.forceDelete = {
+    DataTable.ext.buttons.forceDelete = {
         name: 'forceDelete',
         extend: 'selected',
         className: 'buttons-force-delete btn-danger',

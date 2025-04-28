@@ -25,7 +25,7 @@
  *
  */
 document.addEventListener('DOMContentLoaded', function () {
-    $.fn.dataTable.ext.buttons.ajax = {
+    DataTable.ext.buttons.ajax = {
         name: 'ajax',
         extend: 'selectedSingle',
         className: 'buttons-ajax',

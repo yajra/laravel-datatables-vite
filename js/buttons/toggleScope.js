@@ -15,7 +15,7 @@
  *     scopes[onlyDeleted] = 0 / 1
  */
 document.addEventListener('DOMContentLoaded', function () {
-    $.fn.dataTable.ext.buttons.toggleScope = {
+    DataTable.ext.buttons.toggleScope = {
         name: 'toggleScope',
         className: 'buttons-toggle',
         text: '<i class="bi bi-square"></i> Toggle',

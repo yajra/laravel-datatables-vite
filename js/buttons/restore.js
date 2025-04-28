@@ -7,7 +7,7 @@
  *
  */
 document.addEventListener('DOMContentLoaded', function () {
-    $.fn.dataTable.ext.buttons.restore = {
+    DataTable.ext.buttons.restore = {
         name: 'restore',
         extend: 'selected',
         className: 'buttons-restore btn-success',

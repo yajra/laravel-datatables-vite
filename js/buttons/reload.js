@@ -7,7 +7,7 @@
  *
  */
 document.addEventListener('DOMContentLoaded', function () {
-    $.fn.dataTable.ext.buttons.reload = {
+    DataTable.ext.buttons.reload = {
         name: 'reload',
         className: 'btn-primary',
         titleAttr: 'Reload',

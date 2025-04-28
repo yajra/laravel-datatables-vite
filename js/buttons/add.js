@@ -7,7 +7,7 @@
  *
  */
 document.addEventListener('DOMContentLoaded', function () {
-    $.fn.dataTable.ext.buttons.add = {
+    DataTable.ext.buttons.add = {
         name: 'add',
         className: 'buttons-add btn-success',
         text: '<i class="bi bi-plus"></i> New',

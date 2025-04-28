@@ -7,7 +7,7 @@
  *
  */
 document.addEventListener('DOMContentLoaded', function () {
-    $.fn.dataTable.ext.buttons.csv = {
+    DataTable.ext.buttons.csv = {
         name: 'csv',
         className: 'buttons-csv btn-primary',
         titleAttr: 'Export as CSV',
