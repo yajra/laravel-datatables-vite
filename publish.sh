@@ -58,6 +58,34 @@ require_command mktemp
 require_command node
 require_command npm
 
+package_name="$(node -p "require('./package.json').name")"
+
+verify_npm_access() {
+    local npm_user
+    local owners
+
+    if ! npm_user="$(npm whoami 2>/dev/null)"; then
+        echo "You are not logged in to npm. Run 'npm login' before publishing." >&2
+        exit 1
+    fi
+
+    if ! npm view "$package_name" name >/dev/null 2>&1; then
+        echo "Package $package_name does not exist on npm yet; publishing as $npm_user."
+        return
+    fi
+
+    owners="$(npm owner ls "$package_name")"
+
+    if ! printf '%s\n' "$owners" | awk '{ print $1 }' | grep -qx "$npm_user"; then
+        echo "npm user $npm_user is not an owner of $package_name." >&2
+        echo "Current owners:" >&2
+        printf '%s\n' "$owners" >&2
+        exit 1
+    fi
+
+    echo "Publishing $package_name as npm user $npm_user."
+}
+
 release_info_file="$(mktemp)"
 trap 'rm -f "$release_info_file"' EXIT
 
@@ -260,6 +288,8 @@ if [ "$dry_run" -eq 1 ]; then
     echo "Dry run only; no version, git, or npm changes were made."
     exit 0
 fi
+
+verify_npm_access
 
 if [ -n "$(git status --porcelain)" ]; then
     echo "Working tree has uncommitted changes. Commit or stash them before publishing." >&2
