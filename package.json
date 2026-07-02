@@ -1,7 +1,7 @@
 {
   "name": "laravel-datatables-vite",
   "version": "0.7.0",
-  "description": "Laravel DataTables with jQuery, Bootstrap and Vite",
+  "description": "Laravel DataTables with Bootstrap and Vite",
   "main": "js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,8 +15,7 @@
     "laravel",
     "dataTables",
     "vitejs",
-    "bootstrap",
-    "jquery"
+    "bootstrap"
   ],
   "author": {
     "name": "Arjay Angeles",
@@ -30,10 +29,9 @@
   "dependencies": {
     "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.9.1",
-    "datatables.net": "^2.1.8",
-    "datatables.net-bs5": "^2.1.8",
-    "datatables.net-buttons-bs5": "^3.1.2",
-    "datatables.net-select-bs5": "^2.1.0",
-    "jquery": "^3.6.1 || ^4.0.0"
+    "datatables.net": "3.0.0-beta.1",
+    "datatables.net-bs5": "3.0.0-beta.1",
+    "datatables.net-buttons-bs5": "4.0.0-beta.1",
+    "datatables.net-select-bs5": "4.0.0-beta.1"
   }
 }

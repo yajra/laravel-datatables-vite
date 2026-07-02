@@ -1,6 +1,3 @@
-import $ from 'jquery';
-window.jQuery = window.$ = $;
-
 import * as Bootstrap from 'bootstrap';
 window.bootstrap = Bootstrap;
 
@@ -12,7 +9,7 @@ import 'datatables.net-select-bs5';
 import './dataTables.buttons.js';
 import './dataTables.renderers.js';
 
-$.extend(true, DataTable.Buttons.defaults, {
+DataTable.util.object.assignDeep(DataTable.Buttons.defaults, {
     dom: {
         button: {
             liner: {
@@ -22,6 +19,6 @@ $.extend(true, DataTable.Buttons.defaults, {
     },
 });
 
-$.extend(DataTable.ext.classes, {
-    sTable: "dataTable table table-striped table-bordered table-hover",
+DataTable.util.object.assignDeep(DataTable.ext.classes, {
+    table: "dataTable table table-striped table-bordered table-hover",
 });
