@@ -34,6 +34,6 @@
     "datatables.net-bs5": "^2.1.8",
     "datatables.net-buttons-bs5": "^3.1.2",
     "datatables.net-select-bs5": "^2.1.0",
-    "jquery": "^3.6.1"
+    "jquery": "^3.6.1 || ^4.0.0"
   }
 }
