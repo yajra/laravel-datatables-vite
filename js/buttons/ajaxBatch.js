@@ -39,16 +39,18 @@ document.addEventListener('DOMContentLoaded', function () {
             const url = config.url || '';
             const method = config.method || 'POST';
 
-            $.ajax({
+            DataTable.ajax({
                 url: url,
                 method: method,
-                data: formData
-            }).done(response => {
-                if (config.hasOwnProperty('onSuccess')) config.onSuccess(response);
+                data: formData,
+                success: response => {
+                    if (config.hasOwnProperty('onSuccess')) config.onSuccess(response);
 
-                dt.draw();
-            }).fail(err => {
-                if (config.hasOwnProperty('onError')) config.onError(err);
+                    dt.draw();
+                },
+                error: err => {
+                    if (config.hasOwnProperty('onError')) config.onError(err);
+                }
             })
         }
     };

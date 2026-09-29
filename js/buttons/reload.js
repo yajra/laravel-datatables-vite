@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         init: function (dt, node, config) {
             let instance = this;
             dt.on('processing.dt', (e, settings, processing) => {
-                let button = $(node);
+                let button = node;
 
                 if (processing) {
                     button.html('<i class="spinner-border spinner-border-sm" role="status">\n' +
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     button.html(config.text);
                 }
 
-                button.attr('disabled', processing);
+                instance.enable(!processing);
             });
         },
     };
