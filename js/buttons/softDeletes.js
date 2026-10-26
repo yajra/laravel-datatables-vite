@@ -27,12 +27,12 @@ document.addEventListener('DOMContentLoaded', function () {
         className: 'buttons-toggle',
         text: '<i class="bi bi-square"></i> Show Deleted',
         action: function (e, dt, node, config) {
-            node.find('i').toggleClass('fa-check-square').toggleClass('fa-square');
+            node.find('i').classToggle('fa-check-square').classToggle('fa-square');
 
             let key = config.key || 'scopes';
             dt.on('preXhr.withTrashed', (e, conf, data) => {
                 data[key] = data[key] || {};
-                data[key].withTrashed = node.find('i.fa-check-square').length
+                data[key].withTrashed = node.find('i.fa-check-square').count()
             });
 
             dt.draw();
@@ -68,12 +68,12 @@ document.addEventListener('DOMContentLoaded', function () {
         className: 'buttons-toggle',
         text: '<i class="bi bi-square"></i> Only Deleted',
         action: function (e, dt, node, config) {
-            node.find('i').toggleClass('fa-check-square').toggleClass('fa-square');
+            node.find('i').classToggle('fa-check-square').classToggle('fa-square');
 
             let key = config.key || 'scopes';
             dt.on('preXhr.onlyTrashed', (e, conf, data) => {
                 data[key] = data[key] || {};
-                data[key].onlyTrashed = node.find('i.fa-check-square').length
+                data[key].onlyTrashed = node.find('i.fa-check-square').count()
             });
 
             dt.draw();

@@ -20,13 +20,13 @@ document.addEventListener('DOMContentLoaded', function () {
         className: 'buttons-toggle',
         text: '<i class="bi bi-square"></i> Toggle',
         action: function (e, dt, node, config) {
-            node.find('i').toggleClass('bi-check-square').toggleClass('bi-square');
+            node.find('i').classToggle('bi-check-square').classToggle('bi-square');
 
             let scope = config.scope;
             let key = config.key || 'scopes';
             dt.on('preXhr.' + scope, (e, conf, data) => {
                 data[key] = data[key] || {};
-                data[key][scope] = node.find('i.bi-check-square').length
+                data[key][scope] = node.find('i.bi-check-square').count()
             });
 
             dt.draw();
