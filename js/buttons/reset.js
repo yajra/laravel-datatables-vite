@@ -13,12 +13,19 @@ document.addEventListener('DOMContentLoaded', function () {
         titleAttr: 'Reset',
         text: '<i class="bi bi-arrow-counterclockwise"></i>',
         action: function (e, dt, button, config) {
-            $('.dataTable').find(':input').each(function () {
-                $(this).val('');
-            }).each(function (e) {
-                let val = DataTable.util.escapeRegex($(this).val());
-                dt.table().column($(this).closest('th').index()).search(val ? val : '', false, true);
+            document.querySelectorAll('.dataTable input, .dataTable select, .dataTable textarea').forEach(function (input) {
+                input.value = '';
+
+                let columnHeader = input.closest('th');
+
+                if (!columnHeader) {
+                    return;
+                }
+
+                let columnIndex = Array.from(columnHeader.parentNode.children).indexOf(columnHeader);
+                dt.table().column(columnIndex).search('', false, true);
             });
+
             dt.search('').draw();
         }
     };

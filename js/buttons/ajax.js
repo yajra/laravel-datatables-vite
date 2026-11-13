@@ -43,16 +43,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
-            $.ajax({
+            DataTable.ajax({
                 url: url,
                 method: method,
-                data: data
-            }).done(response => {
-                if (config.hasOwnProperty('onSuccess')) config.onSuccess(response)
+                data: data,
+                success: response => {
+                    if (config.hasOwnProperty('onSuccess')) config.onSuccess(response)
 
-                dt.draw();
-            }).fail(err => {
-                if (config.hasOwnProperty('onError')) config.onError(err)
+                    dt.draw();
+                },
+                error: err => {
+                    if (config.hasOwnProperty('onError')) config.onError(err)
+                }
             })
         }
     };

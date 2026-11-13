@@ -3,5 +3,5 @@ window._buildUrl = function (dt, action) {
     let params = dt.ajax.params();
     params.action = action;
 
-    return url + '?' + $.param(params);
+    return url + '?' + DataTable.util.ajax.serialize(params);
 };
