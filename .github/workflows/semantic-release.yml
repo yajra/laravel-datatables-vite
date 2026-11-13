@@ -1,41 +1,62 @@
 name: Semantic Releases
 
 on:
+  push:
+    branches: [main, 0.x]
+  pull_request:
+    branches: [main, develop, 0.x]
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Preview the release without creating a tag or GitHub release
+        type: boolean
+        default: true
 
 permissions:
-  contents: write
-  pull-requests: write
-  issues: write
-  packages: write
-  statuses: write
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-  run:
+  checks:
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm run lint
+      - run: npm test
+
+  release:
+    needs: checks
+    if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/0.x')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           persist-credentials: false
-
-      - name: Setup Configuration
-        run: |
-          if [ -n "$GH_TOKEN_SECRET" ]; then
-            echo "GH_TOKEN=$GH_TOKEN_SECRET" >> $GITHUB_ENV
-          else
-            echo "GH_TOKEN=$GITHUB_TOKEN" >> $GITHUB_ENV
-          fi
-        env:
-          GH_TOKEN_SECRET: ${{ secrets.GH_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*'
+          node-version: '24'
 
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@9cc899c47e6841430bbaedb43de1560a568dfd16
+        with:
+          semantic_version: '24'
+          dry_run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+          extra_plugins: |
+            @semantic-release/changelog@6
+            @semantic-release/git@10
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}

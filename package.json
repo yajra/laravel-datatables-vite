@@ -4,7 +4,8 @@
   "description": "Laravel DataTables with Bootstrap and Vite",
   "main": "js/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "node scripts/lint.cjs",
+    "test": "node --test"
   },
   "repository": {
     "type": "git",

@@ -1,8 +1,11 @@
 {
     "branches": [
-        "main",
-        "master",
-        "*.x"
+        {
+            "name": "0.x",
+            "range": "0.7.x",
+            "channel": "0.x"
+        },
+        "main"
     ],
     "plugins": [
         "@semantic-release/commit-analyzer",
@@ -14,10 +17,17 @@
             }
         ],
         [
+            "@semantic-release/npm",
+            {
+                "npmPublish": false
+            }
+        ],
+        [
             "@semantic-release/git",
             {
                 "assets": [
-                    "CHANGELOG.md"
+                    "CHANGELOG.md",
+                    "package.json"
                 ]
             }
         ],
