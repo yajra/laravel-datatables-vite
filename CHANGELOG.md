@@ -1,3 +1,13 @@
+# [1.0.0](https://github.com/yajra/laravel-datatables-vite/compare/v0.7.0...v1.0.0) (2026-11-13)
+
+
+* feat!: release 1.0.0 ([93a4fe3](https://github.com/yajra/laravel-datatables-vite/commit/93a4fe312a3c9019b75998893151da623b4d1271)), closes [#21](https://github.com/yajra/laravel-datatables-vite/issues/21)
+
+
+### BREAKING CHANGES
+
+* Requires DataTables 3 and no longer supplies jQuery.
+
 # Laravel DataTables Vite CHANGELOG
 
 ## v0.6.1 - 2024-12-13
