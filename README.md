@@ -23,6 +23,38 @@ Add the following to your `resources/sass/app.scss` file:
 @import "datatables.net-select-bs5/css/select.bootstrap5.min.css";
 ```
 
+## Migrating to 1.x
+
+DataTables 3.1.5 or later is required. This includes the upstream fix for HTTP 204 (No Content), so successful single-row and batch Ajax actions invoke `onSuccess` and redraw the table even when the response body is empty.
+
+Ajax actions now use `DataTable.ajax` rather than jQuery's Ajax transport. Move application-wide request headers from `$.ajaxSetup()` to `DataTable.ajax.defaults.headers`. For Laravel, add the CSRF token to the page:
+
+```html
+<meta name="csrf-token" content="{{ csrf_token() }}">
+```
+
+Then configure the headers after importing the package, before initializing tables or invoking Ajax buttons:
+
+```js
+import 'laravel-datatables-vite';
+
+DataTable.ajax.defaults.headers = {
+    ...DataTable.ajax.defaults.headers,
+    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+};
+```
+
+This applies to both `ajax` and `ajaxBatch` buttons, including applications that still use jQuery. CSRF token configuration remains the application's responsibility.
+
+If your application uses jQuery, install and register it explicitly before initializing tables:
+
+```js
+import jQuery from 'jquery';
+import 'laravel-datatables-vite';
+
+DataTable.use(jQuery);
+```
+
 ## Quick Starter
 
 A [quick starter guide](https://yajrabox.com/docs/laravel-datatables/quick-starter) is available at the official package docs.
@@ -60,7 +92,7 @@ GitHub releases and npm publishing are separate. After the GitHub release comple
 npm publish --tag latest
 
 # Legacy 0.x maintenance release
-npm publish --tag 0.x
+npm publish --tag legacy-0
 ```
 
-Use the maintenance tag to keep 0.x from replacing npm's `latest`. Do not run `publish.sh` after an automated GitHub release: it creates another version and tag. That script remains available for the separate manual release process.
+Use the `legacy-0` npm tag to keep 0.x from replacing npm's `latest`. Do not run `publish.sh` after an automated GitHub release: it creates another version and tag. That script remains available for the separate manual release process.
